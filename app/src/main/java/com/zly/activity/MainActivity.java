@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 
 import com.zly.activity.base.BaseActivity;
-import com.zly.fragment.TestFragment;
+import com.zly.test.TestFragment;
 import com.zly.view.TabIndicator;
 import com.zly.zhibo.R;
 

@@ -1,25 +1,28 @@
-package com.zly.fragment;
+package com.zly.test;
 
 import android.os.Bundle;
-import android.view.View;
 
 
+import com.zly.activity.base.BaseNetActivity;
 import com.zly.network.RetrofitManager;
 import com.zly.network.api.TestApi;
+import com.zly.utils.LogUtils;
 import com.zly.zhibo.R;
 
 import retrofit2.Call;
 
 /**
+ * 测试activity
  * Created by xiaoyuan on 16/11/6.
  */
 
-public class TestFragment extends com.zly.fragment.base.BaseNetFragment<Object> {
-
+public class TestActivity extends BaseNetActivity<Object> {
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         goneLoading();
+//        setContentView(R.layout.activity_main);
+//        TestModel.test();
     }
 
     @Override
@@ -29,13 +32,18 @@ public class TestFragment extends com.zly.fragment.base.BaseNetFragment<Object> 
 
     @Override
     protected void loadData() {
-        com.zly.network.api.TestApi testApi = RetrofitManager.getTestRetrofit().create(TestApi.class);
+        TestApi testApi = RetrofitManager.getTestRetrofit().create(TestApi.class);
         Call<Object> testCall = testApi.test();
         testCall.enqueue(this);
     }
 
     @Override
     protected void processData(Object o) {
+        LogUtils.w(o.toString());
+    }
+
+    @Override
+    protected void initTitleBar(HeaderBuilder builder) {
 
     }
 

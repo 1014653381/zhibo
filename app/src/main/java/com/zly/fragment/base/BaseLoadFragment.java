@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import com.zly.listener.OnRefreshListener;
 import com.zly.view.PublicLoadLayout;
 
+import butterknife.ButterKnife;
+
 
 /**
  * date: Created on 16/5/24.
@@ -21,6 +23,7 @@ public abstract class BaseLoadFragment extends com.zly.fragment.base.UmengFragme
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mRootLayout = PublicLoadLayout.createPage(getContext(), getContentResId(), this);
+
         return mRootLayout;
     }
 
