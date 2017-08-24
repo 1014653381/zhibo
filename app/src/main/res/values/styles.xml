@@ -46,5 +46,9 @@
         <!-- <item name="android:background" >@drawable/tab_selector_checked_bg</item> -->
     </style>
 
-
+    <!-- pupupwindow的弹出和消失动画 -->
+    <style name="popup_window_anim">
+        <item name="android:windowEnterAnimation">@anim/in</item>
+        <item name="android:windowExitAnimation">@anim/out</item>
+    </style>
 </resources>

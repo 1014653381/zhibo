@@ -142,6 +142,7 @@ public class MainActivity extends BaseActivity implements com.zly.fragment.MyFra
 
     @Override
     protected void initTitleBar(HeaderBuilder builder) {
+        builder.goneToolbar();
     }
 
     @Override
